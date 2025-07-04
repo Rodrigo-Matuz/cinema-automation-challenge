@@ -1,0 +1,23 @@
+Summary,Issue Type,Description,Priority,Status,Labels
+Registrar usuario com administrador,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/setup/admin`\n*Status:* 201 Created\n*Time:* 161ms",Medium,Pass,Test
+Registrar usuario com administrador Copy,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/setup/test-users`\n*Status:* 200 OK\n*Time:* 88ms",Medium,Pass,Test
+01 Registrar novo usuario,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/auth/register`\n*Status:* 201 Created\n*Time:* 159ms",Medium,Pass,Test
+02 Registrar usuario com email duplicado,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/auth/register`\n*Status:* 400 Bad Request\n*Time:* 46ms",Medium,Pass,Test
+03.1 Registrar usuario com email inválido,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/auth/register`\n*Status:* 400 Bad Request\n*Time:* 47ms",Medium,Pass,Test
+03.2 Registrar usuario com senha inválida,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/auth/register`\n*Status:* 400 Bad Request\n*Time:* 46ms",Medium,Pass,Test
+04 Login de usuario com credenciais válidas,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/auth/login`\n*Status:* 200 OK\n*Time:* 116ms",Medium,Pass,Test
+05 Login de usuario com senha incorreta,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/auth/login`\n*Status:* 401 Unauthorized\n*Time:* 114ms",Medium,Pass,Test
+Login de administrador,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/auth/login`\n*Status:* 200 OK\n*Time:* 112ms",Medium,Pass,Test
+06 Visualizar perfil,QAlity Test,"*Method:* GET\n*URL:* `http://localhost:3000/api/v1/auth/me`\n*Status:* 200 OK\n*Time:* 90ms",Medium,Pass,Test
+07 (US conflict) Atualizar senha de usuario cadastrado,QAlity Test,"*Method:* PUT\n*URL:* `http://localhost:3000/api/v1/auth/profile`\n*Status:* 500 Internal Server Error\n*Time:* 89ms",High,Fail,Test
+08 Alterar dados de usuario sem autenticação,QAlity Test,"*Method:* PUT\n*URL:* `http://localhost:3000/api/v1/auth/profile`\n*Status:* 401 Unauthorized\n*Time:* 2ms",Medium,Pass,Test
+10 Visualizar detalhes de filme,QAlity Test,"*Method:* GET\n*URL:* `http://localhost:3000/api/v1/movies/1`\n*Status:* 200 OK\n*Time:* 99ms",Medium,Pass,Test
+09 Listar todos os filmes,QAlity Test,"*Method:* GET\n*URL:* `http://localhost:3000/api/v1/movies`\n*Status:* 200 OK\n*Time:* 91ms",Medium,Pass,Test
+11 Listar sessões por filme,QAlity Test,"*Method:* GET\n*URL:* `http://localhost:3000/api/v1/sessions?movieId=1`\n*Status:* 200 OK\n*Time:* 278ms",Medium,Pass,Test
+12 Filtrar sessões por data,QAlity Test,"*Method:* GET\n*URL:* `http://localhost:3000/api/v1/sessions?movieId=2&date=2012-04-5`\n*Status:* 200 OK\n*Time:* 93ms\n*Observação:* 0 testes passaram",Medium,Fail,Test
+(DOC) Criar nova sessão,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/sessions`\n*Status:* 404 Not Found\n*Time:* 91ms",Medium,Fail,Test
+13 (DOC) Reservar assentos disponiveis,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/reservations`\n*Status:* 400 Bad Request\n*Time:* 48ms",Medium,Fail,Test
+15 (BUG) Reservar assentos disponiveis sem autenticação,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/reservations`\n*Status:* 400 Bad Request\n*Time:* 47ms",High,Fail,Test
+(BUG) Criar nova reserva para usuário,QAlity Test,"*Method:* POST\n*URL:* `http://localhost:3000/api/v1/reservations`\n*Status:* 400 Bad Request\n*Time:* 48ms",High,Fail,Test
+18 Lister cinemas,QAlity Test,"*Method:* GET\n*URL:* `http://localhost:3000/api/v1/theaters`\n*Status:* 200 OK\n*Time:* 46ms",Medium,Pass,Test
+19 Detalhar cinema,QAlity Test,"*Method:* GET\n*URL:* `http://localhost:3000/api/v1/theaters/685c2fd3dc984084f02b4194`\n*Status:* 200 OK\n*Time:* 980ms",Medium,Pass,Test
